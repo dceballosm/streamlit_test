@@ -50,17 +50,17 @@ if tabs=="Home":
 
             st.subheader('Contexto y Problematica')
 
-            contextoProblematica = '''Hoy en día, la retención de empleados se ha convertido en una de las principales preocupaciones para las empresas. \
-            La alta rotación de personal no solo representa costos significativos en términos de reclutamiento y capacitación, sino que también afecta negativamente la moral del equipo y la productividad general. \
+            contextoProblematica = '''Hoy en día, la retención de empleados se ha convertido en una de las principales preocupaciones para las empresas. \n
+            La alta rotación de personal no solo representa costos significativos en términos de reclutamiento y capacitación, sino que también afecta negativamente la moral del equipo y la productividad general. \n
             Las organizaciones que no logran retener a sus empleados ierden talento valioso y enfrentan desafíos adicionales para mantener la continuidad en sus operaciones.'''
               
             st.markdown(contextoProblematica)
 
             st.subheader('Impacto de la Problemática')
 
-            impactoProblematica = '''La incapacidad de retener a los empleados puede llevar a una serie de problemas, incluyendo:\
-            **Aumento de Costos:** Gastos en reclutamiento, formación de nuevos empleados y pérdida de productividad durante el período de adaptación.\          
-            **Pérdida de Conocimiento:** Los empleados que se marchan llevan consigo el conocimiento adquirido sobre los procesos y la cultura de la empresa.\
+            impactoProblematica = '''La incapacidad de retener a los empleados puede llevar a una serie de problemas, incluyendo:\n
+            **Aumento de Costos:** Gastos en reclutamiento, formación de nuevos empleados y pérdida de productividad durante el período de adaptación.\n          
+            **Pérdida de Conocimiento:** Los empleados que se marchan llevan consigo el conocimiento adquirido sobre los procesos y la cultura de la empresa.\n
             **Desmoralización del Equipo:** La salida frecuente de colegas puede afectar la moral y la motivación del equipo restante.'''
 
             st.markdown(impactoProblematica)
@@ -73,19 +73,19 @@ if tabs=="Home":
 
             st.subheader('Conclusion')
 
-            conclusion = '''El análisis de retención de empleados proporciona una oportunidad invaluable para que las empresas comprendan mejor las razones detrás de la rotación de personal y tomen medidas proactivas para mejorar la satisfacción y retención de sus empleados. \ 
+            conclusion = '''El análisis de retención de empleados proporciona una oportunidad invaluable para que las empresas comprendan mejor las razones detrás de la rotación de personal y tomen medidas proactivas para mejorar la satisfacción y retención de sus empleados. \n 
             Con un enfoque basado en datos y el uso de modelos de machine learning, se pueden desarrollar estrategias efectivas que no solo mejoren la retención, sino que también contribuyan al crecimiento y éxito a largo plazo de la empresa.
             '''
             st.markdown(conclusion)
             
             st.subheader('Autores:')
-            authors = '''   **Matias Ponce** - PM / Data Engineer \
-                            **Francisco Vela** - Data Analyst \
-                            **Marcelo Ortiz** - Data Analyst \  
-                            **Dayana Vega** - Data Scientist \
-                            **Gerardo Toso** - Data Scientist \ 
-                            **David Ramirez** - ML Engineer \
-                            **Daniel Ceballos** - ML Engineer \
+            authors = '''   **Matias Ponce** - PM / Data Engineer \n
+                            **Francisco Vela** - Data Analyst \n
+                            **Marcelo Ortiz** - Data Analyst \n  
+                            **Dayana Vega** - Data Scientist \n
+                            **Gerardo Toso** - Data Scientist \n 
+                            **David Ramirez** - ML Engineer \n
+                            **Daniel Ceballos** - ML Engineer \n
             '''
             st.markdown(authors)
 
