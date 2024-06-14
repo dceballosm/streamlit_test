@@ -13,66 +13,88 @@ st.set_page_config(
 )
 
 
-def KNN_model_predict(params, slider_count):
+# def KNN_model_predict(params, slider_count):
     
-    key_file_path = './GCP_service_account/key_storage_ML.json'
-    bucket_name= 'data_clear_ml'
-    file_name = 'modelo1_knn.pkl'
+#     key_file_path = './GCP_service_account/key_storage_ML.json'
+#     bucket_name= 'data_clear_ml'
+#     file_name = 'modelo1_knn.pkl'
 
-    # Set up authentication with service account key file
+#     # Set up authentication with service account key file
 
-    storage_client = storage.Client.from_service_account_json(key_file_path)
+#     storage_client = storage.Client.from_service_account_json(key_file_path)
 
-     # Download the file from the bucket
-    try:
-        bucket = storage_client.bucket(bucket_name)
-        blob = bucket.blob(file_name)
-        model_data  = blob.download_as_bytes()
-        knn_model_file = pickle.loads(model_data)
-        indexes = knn_model_file.kneighbors([params],slider_count)[1][0]
+#      # Download the file from the bucket
+#     try:
+#         bucket = storage_client.bucket(bucket_name)
+#         blob = bucket.blob(file_name)
+#         model_data  = blob.download_as_bytes()
+#         knn_model_file = pickle.loads(model_data)
+#         indexes = knn_model_file.kneighbors([params],slider_count)[1][0]
 
-    except Exception as e:
-        print(f"Error downloading file: {e}")
+#     except Exception as e:
+#         print(f"Error downloading file: {e}")
 
-    return indexes
+#     return indexes
 
 
 st.markdown('<style>' + open('./style.css').read() + '</style>', unsafe_allow_html=True)
 
 with st.sidebar:
-    tabs = on_hover_tabs(tabName=['Home', 'Dashboard', 'ML Model'], 
-                         iconName=['home', 'dashboard', 'rocket'], default_choice=0)
+    tabs = on_hover_tabs(tabName=['Home', 'Dashboard'], 
+                         iconName=['home', 'dashboard'], default_choice=0)
 
 if tabs=="Home":
         with st.container(border=True):
-            st.header("Emplea Fidelidad/:blue[grupo 3]:rocket:", divider='rainbow',anchor=False)
+            st.header("Emplea Fidelidad/:blue[grupo 63]:rocket:", divider='rainbow',anchor=False)
 
 
-            st.subheader('Bienvenidos:')
+            st.subheader('Contexto y Problematica')
 
-            intro = '''...'''
-        
+            contextoProblematica = '''Hoy en día, la retención de empleados se ha convertido en una de las principales preocupaciones para las empresas. <br>
+            La alta rotación de personal no solo representa costos significativos en términos de reclutamiento y capacitación, sino que también afecta negativamente la moral del equipo y la productividad general. <br>
+            Las organizaciones que no logran retener a sus empleados ierden talento valioso y enfrentan desafíos adicionales para mantener la continuidad en sus operaciones.'''
               
-            st.markdown(intro)
+            st.markdown(contextoProblematica)
 
+            st.subheader('Impacto de la Problemática')
+
+            impactoProblematica = '''La incapacidad de retener a los empleados puede llevar a una serie de problemas, incluyendo:<br>
+            <strong>Aumento de Costos:</strong> Gastos en reclutamiento, formación de nuevos empleados y pérdida de productividad durante el período de adaptación.<br>          
+            <strong>Pérdida de Conocimiento:</strong> Los empleados que se marchan llevan consigo el conocimiento adquirido sobre los procesos y la cultura de la empresa.<br>
+            <strong>Desmoralización del Equipo:</strong> La salida frecuente de colegas puede afectar la moral y la motivación del equipo restante.'''
+
+            st.markdown(impactoProblematica)
+
+            st.subheader('Objetivo del Proyecto')
+
+            objetivoProyecto = '''El objetivo principal de este proyecto es analizar los datos de recursos humanos para identificar los factores que influyen en la retención de empleados y desarrollar estrategias efectivas para mejorar la retención
+            '''
+            st.markdown(objetivoProyecto)
+
+            st.subheader('Conclusion')
+
+            conclusion = '''El análisis de retención de empleados proporciona una oportunidad invaluable para que las empresas comprendan mejor las razones detrás de la rotación de personal y tomen medidas proactivas para mejorar la satisfacción y retención de sus empleados. <br> 
+            Con un enfoque basado en datos y el uso de modelos de machine learning, se pueden desarrollar estrategias efectivas que no solo mejoren la retención, sino que también contribuyan al crecimiento y éxito a largo plazo de la empresa.
+            '''
+            st.markdown(conclusion)
+            
             st.subheader('Autores:')
-            authors = '''   **Matias Ponce** - PM / Data Engineer
-                            **Francisco Vela** - Data Analyst
-                            **Marcelo Ortiz** - Data Analyst   
-                            **Dayana Vega** - Data Scientist 
-                            **Gerardo Toso** - Data Scientist  
-                            **David Ramirez** - ML Engineer
-                            **Daniel Ceballos** - ML Engineer
-        '''
+            authors = '''   **Matias Ponce** - PM / Data Engineer <br>
+                            **Francisco Vela** - Data Analyst <br>
+                            **Marcelo Ortiz** - Data Analyst <br>  
+                            **Dayana Vega** - Data Scientist <br>
+                            **Gerardo Toso** - Data Scientist <br> 
+                            **David Ramirez** - ML Engineer <br>
+                            **Daniel Ceballos** - ML Engineer <br>
+            '''
             st.markdown(authors)
 
 elif tabs=="Dashboard":
         # st.header("Dashboard DPT05/:blue[grupo 3]:rocket:", divider='rainbow')
-        embed_url = "https://app.powerbi.com/view?r=eyJrIjoiMzRhMjMxYTgtY2Q3MS00NDk0LThjMWEtMmYwMWJmN2EyMzc2IiwidCI6Ijk5ZTFlNzIxLTcxODQtNDk4ZS04YWZmLWIyYWQ0ZTUzYzFjMiIsImMiOjR9&pageName=ReportSection"
+        embed_url = "https://app.powerbi.com/view?r=eyJrIjoiZjM5ZDVkODUtYWFmZi00NTk2LTkyNWEtYmE4YjhhZGEyMmYwIiwidCI6ImRmODY3OWNkLWE4MGUtNDVkOC05OWFjLWM4M2VkN2ZmOTVhMCJ9"
         st.components.v1.iframe(src=embed_url, height=800, width=1100)
 
-elif tabs=="ML":
-    pass
+# elif tabs=="ML":
         
 #         st.header("Machine Learning Acceso al modelo entrenado", divider='rainbow',anchor=False)
         
